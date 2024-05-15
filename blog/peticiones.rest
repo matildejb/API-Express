@@ -1,0 +1,58 @@
+@PORT = 3000
+
+@HOST = http://localhost:{{PORT}}
+
+### Recuperar todos los autores de BBDD
+GET {{HOST}}/api/authors
+### Recuperar autor por id
+GET {{HOST}}/api/authors/1
+### Crear nuevo autor
+POST {{HOST}}/api/authors
+Content-Type: application/json
+
+{
+    "name": "maria",
+    "email": "mariaCollado@example.com",
+    "image": ""
+}
+
+### Actualizar autor existente
+PUT {{HOST}}/api/authors/1
+Content-Type: application/json
+
+{
+    "name": "Juan Pérez",
+    "email": "juan.perez@example.com",
+    "image": "1.juan.jpg"
+}
+
+### Recuperar todos los posts
+GET {{HOST}}/api/posts
+### Recuperar post por id
+GET {{HOST}}/api/posts/5
+### Crear post 
+POST {{HOST}}/api/posts
+Content-Type: application/json
+
+{
+    "title": "Design web",
+    "description": "You can learn to desing",
+    "creation_date": "2020-05-29",
+    "category": "Front",
+    "authors_id": 5
+}
+
+### Actualizar post existente
+PUT {{HOST}}/api/posts/27
+Content-Type: application/json
+
+{
+    "title": "Design web",
+    "description": "You can learn to desing",
+    "creation_date": "2020-05-29",
+    "category": "Front",
+    "authors_id": 2
+}
+
+### Recuperar Autor con sus posts
+GET {{HOST}}/api/authors/5/posts
